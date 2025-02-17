@@ -1,0 +1,10 @@
+[
+  {"question": "Mia has 3 bags with 4 apples each. How many apples does she have?", "answer": "12"},
+  {"question": "A book costs 7 dollars. How much do 5 books cost?", "answer": "35"},
+  {"question": "Tom had 20 marbles and gave away 6. How many remain?", "answer": "14"},
+  {"question": "A class has 18 students split into 3 equal teams. How large is each team?", "answer": "6"},
+  {"question": "Sara runs 2 km daily. How many km does she run in 8 days?", "answer": "16"},
+  {"question": "There are 15 pens; 9 are blue and the rest red. How many are red?", "answer": "6"},
+  {"question": "Four boxes hold 9 toys each. What is the total?", "answer": "36"},
+  {"question": "A baker made 24 rolls and sold 7. How many are left?", "answer": "17"}
+]
