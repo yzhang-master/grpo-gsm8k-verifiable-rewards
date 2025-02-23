@@ -101,7 +101,7 @@ def grpo_loss(
         "reward": sum(item.reward for item in rollouts) / len(rollouts),
         "accuracy": sum(item.reward > 0 for item in rollouts) / len(rollouts),
         "kl": float(exact_kl_numerator / tokens),
-        "entropy": float(torch.cat(entropies).mean()),
+        "entropy": float(torch.cat(entropies).detach().mean()),
         "length": sum(lengths) / len(lengths),
         "advantage_sum": sum(item.advantage for item in rollouts),
         "objective": float(objective.detach()),
