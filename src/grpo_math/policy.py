@@ -51,7 +51,9 @@ class TinyPolicy(nn.Module):
     def step(
         self, state: torch.Tensor, previous: torch.Tensor, position: int
     ) -> tuple[torch.Tensor, torch.Tensor]:
-        inputs = torch.cat((self.token_embedding(previous), self.position_embedding.weight[position]))
+        inputs = torch.cat(
+            (self.token_embedding(previous), self.position_embedding.weight[position])
+        )
         state = self.cell(inputs, state)
         return self.head(state), state
 
