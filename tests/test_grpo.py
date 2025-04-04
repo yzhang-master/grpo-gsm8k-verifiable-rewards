@@ -47,6 +47,18 @@ def test_clipped_grpo_loss_has_real_advantage_gradient_and_metrics():
     assert policy.head.weight.grad.abs().sum() > 0
 
 
+def test_clipping_caps_large_positive_ratio():
+    torch.manual_seed(9)
+    policy = TinyPolicy(hidden_size=16)
+    reference = copy.deepcopy(policy)
+    ids = Tokenizer().encode("12")
+    new_logp, _, _ = policy.evaluate("question", ids, Tokenizer())
+    old_logp = new_logp.detach() - torch.log(torch.tensor(2.0))
+    rollout = Rollout("question", "12", ids, old_logp, 1.0, 1.0)
+    _, metrics = grpo_loss(policy, reference, [rollout], beta=0.0)
+    assert abs(metrics["objective"] + 1.2) < 1e-6
+
+
 def test_sampled_groups_use_verifier_and_center_each_group():
     policy = TinyPolicy(hidden_size=16)
     examples = [{"question": "six plus six", "answer": "12"}]
