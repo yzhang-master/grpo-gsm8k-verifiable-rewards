@@ -29,7 +29,7 @@ The frozen reference is the initial policy. Metrics include exact categorical po
 
 ## Results
 
-Local verification: **14 tests passed**, including exact reward parsing, group normalization, EOS log-probability consistency, clipped GRPO gradients and real two-step training. A two-step, two-question smoke run completed with finite KL/entropy/length metrics; its random rollout rewards were zero, so no learning improvement is claimed.
+Local verification: **15 tests passed**, including exact reward parsing, group normalization, EOS log-probability consistency, trust-region clipping, clipped GRPO gradients and real two-step training. A two-step, two-question smoke run completed with finite KL/entropy/length metrics; its random rollout rewards were zero, so no learning improvement is claimed.
 
 | Evaluation | Model | Accuracy/reward | Status |
 |---|---|---|---|
